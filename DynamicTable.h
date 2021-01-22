@@ -10,9 +10,8 @@ class DynamicTable {
 public:
     DynamicTable(){
         //TODO: implement the constructor
-        //modify the constructor for the dynamic table
         //when created the table should have space for one element
-        //size and last should be set accordingly
+        //variable `size` and `last` should be set accordingly
     }
 
     ~DynamicTable(){
@@ -20,16 +19,17 @@ public:
         //when destroyed you should call explicitly the destructor for the array
     }
 
-    void insert(int value); //TODO: implement the insert function
+    void insert(int value, bool dummy_version); //TODO: implement the insert function
 
 
 private:
 
-    void resize(); //TODO: implement the resize function
+    void resize_dummy(); //TODO: implement an inefficient resize function that will expand the array adding only 1 empty spot every time the array is full.
+    void resize(); //TODO: implement a resize function that doubles the size of the array every time it is full.
 
-    int* table; //array containing de facto the "list" of elements
-    int size; //indicate the size of the array (how many spots it has)
-    int last; //indicate the last element (how many spots are full)
+    int* table; //array containing the"list" of elements
+    int size; //the size of the array
+    int last; //the position of the last element
 
 };
 

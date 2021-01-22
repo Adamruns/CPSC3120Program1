@@ -11,21 +11,31 @@ using namespace std;
 int main() {
 
     int op =10;
-    Timer time;
-//    ofstream outFile = ofstream("results.txt");
+//    Timer time;
+//    ofstream outFile1 = ofstream("results_dummy.txt");
+//    ofstream outFile2 = ofstream("results.txt");
 //    for(op=1; op<1000; op++){
 
-        DynamicTable table = DynamicTable();
-
-        time.start();
+       
+        DynamicTable table1 = DynamicTable();
+        // time.start();
         for(int i=0; i<op; i++){
-            table.insert(10);
+            table1.insert(i, true);
         }
-        time.stop();
-//        outFile << time.getElapsedTime() << endl;
+        // time.stop();
+//        outFile1 << time.getElapsedTime() << endl;
+
+        DynamicTable table2 = DynamicTable();
+        // time.start();
+        for(int i=0; i<op; i++){
+            table2.insert(i, false);
+        }
+        // time.stop();
+//        outFile2 << time.getElapsedTime() << endl;
 //    }
 //
-//    outFile.close();
+//    outFile1.close();
+//    outFile2.close();
 
     return 0;
 }
