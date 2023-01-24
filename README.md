@@ -78,6 +78,6 @@ When you are ready to submit perform the following actions
 - comment all the code marked as Step 3 or Step 4. Your submitted code should print in output only the result of the following line `cout << table1.get_n_resize() << " " << table2.get_n_resize() << endl;`.
 - set `n_insertions=3000`
 - push all your code on Github.
-- access Gradescope and upload code and readme files [`main.cpp`, `DynamicTable.cpp`,`DynamicTable.h`,`Timer.cpp`,`Timer.h`].
+- access Gradescope and upload code and readme files [`CMakeLists.txt`, `main.cpp`, `DynamicTable.cpp`,`DynamicTable.h`,`Timer.cpp`,`Timer.h`].
 
 If everything is uploaded correctly the autograder will run with no issues.
