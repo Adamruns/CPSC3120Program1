@@ -8,7 +8,7 @@ NOTE - you are not allowed to use C++ libraries or data structures such as `vect
 
 ### Step 1 - Setup
 
-The `main.cpp` file provides the code needed to test your implementation of the Dynamic Table. Nothing to be changed here so far.
+The `main.cpp` file provides the code needed to test your implementation of the Dynamic Table. Nothing to be changed here for now.
 
 `Time.*` are two external libraries that will help you estimating the time required for performing certain operations. Nothing to be changed here.
 
@@ -22,8 +22,9 @@ cd build
 cmake ..
 make
 ```
-
 you should obtain the executable named `dynamicTable` in the `build` directory.
+
+
 If you do not want to use cmake you can compile the program from the main folder with the following command.
 
 ```bash
@@ -38,34 +39,44 @@ As we have seen in class, a dynamic table is an array that automatically resize 
 
 * Implementation - Now implement the two functions insert and resize in `DynamicTable.cpp`. You have two methods for resizing the array. The objective of this assignment is to compare these two methods:
 
-    * `resize_dummy` is supposed to resize the array by adding only one cell every time the array is full
+    * `resize_dummy` is supposed to resize the array by adding only one empty slot every time the array is full
     * `resize` is supposed to double the size of the array.
     * `insert` has a boolean value in input used to decide whether you will call `resize` or `resize_dummy` upon insertion.
 
 ### Step 3 - Testing and Evaluation
 
-According to `main.cpp` we are inserting an integer (the value `i`) into our array `op` times. Run the program with increasing values of `op` to check that everything is correct and no segmentation faults are happening. 
+According to `main.cpp` we are inserting an integer (just the value `i`, we don't really care about semantic now) into our array `n_insertions` times. Run the program with increasing values of `op` to check that everything is correct and no segmentation faults are happening. 
 
-Once you are confident your implementation is working, uncomment the remaining lines.
+Once you are confident your implementation is working, uncomment the lines corresponding to STEP 3 in `main.cpp`
 
-`Timer` will start tracking the time needed to perform the insertions into a table. You can add the line
+Now we are going to use `Timer` to start tracking the time needed to perform the insertions into a table. Start modifying the value `n_insertions` using increasing values for your insertions. For example, 10, 100, 1000, 3000.
 
-```c++
-cout << time.getElapsedTime() << endl;
-```
+What results are you obtaining in terms fo time? How can you justify such a behavior and increase in time performance?
 
-We want to test if it is true that by using the `dummy_resize` the complexity is close to be quadratical (`O(n^2)`) while when using the `resize` the complexity should be close to linear (`O(n)`). 
-
-What are the results you have obtained? What can we say about the two implementations?
-
-[ MODIFY THIS README FILE AND ADD HERE YOUR COMMENTS.]
+[ OPEN THIS README FILE AND WRITE HERE YOUR ANSWER ]
 
 
-Once the program has been executed you should get two files in output called `results.txt` and `results_dummy.txt`. If you are familiar with python you can run the following commands to get a graphical representation of the timings (be sure that `plot_time.py` and `results.txt` are in the same folder when you run it)
+### Step 4 - Visualize results [OPTIONAL]
+
+This step should be easy if you already have a python environment installed in your system. If not, feel free to ignore this step or reach out to the professor or TAs for help. Either way, it won't affect the assignment final grade
+
+Uncomment the lines corresponding to step 4 in the `main.cpp` file
+Once the program has been executed you should get two files in output called `results.txt` and `results_dummy.txt`. If you are familiar with python you can run the following commands to get a graphical representation of the timings (be sure that `plot_results.py` and `results.txt` are in the same folder when you run it)
 
 ```bash
-python plot_time.py
-python plot_time_dummy.py
+python plot_results.py
+python plot_results_dummy.py
 ```
 
 [ ADD THE FIGURES YOU HAVE OBTAINED TO THIS README FILE. NOTICE THAT GITHUB HAS PROBLEMS HANDLING PNG FILES. USE JPG EXTENSION INSTEAD FOR YOUR FIGURES ]
+
+[ WHAT CAN WE COMMENT/OBSERVE ABOUT THESE RESULTS?]
+
+### Step 5 - Wrap up and submitting on Gradescope
+
+When you are ready to submit perform the following actions
+- comment all the code marked as Step 3 or Step 4. Your submitted code should print in output only the result of the following line `cout << table1.get_n_resize() << " " << table2.get_n_resize() << endl;`.
+- push all your code on Github.
+- access Gradescope and upload code and readme files [`main.cpp`, `DynamicTable.cpp`,`DynamicTable.h`,`Timer.cpp`,`Timer.h`].
+
+If everything is uploaded correctly the autograder will run with no issues.

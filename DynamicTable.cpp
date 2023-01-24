@@ -9,15 +9,18 @@ void DynamicTable::insert(int value, bool dummy_version) {
 }
 
 void DynamicTable::resize_dummy() {
-
-    //resize the table when necessary adding one empty spot
+    n_resize_called++;
+    
+    //resize the table when necessary adding one empty slot
 
 
 }
 
 void DynamicTable::resize() {
+    n_resize_called++;
 
     //resize the table when necessary doubling its size
+
 
 
 }

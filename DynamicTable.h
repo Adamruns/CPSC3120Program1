@@ -9,15 +9,20 @@ class DynamicTable {
 
 public:
     DynamicTable(){
+        n_resize_called = 0;
+        
         //TODO: implement the constructor
         //when created the table should have space for one element
         //variable `size` and `last` should be set accordingly
+
     }
 
     ~DynamicTable(){
         //TODO: implement the destructor
         //when destroyed you should call explicitly the destructor for the array
     }
+
+    inline int get_n_resize(){return n_resize_called;}
 
     void insert(int value, bool dummy_version); //TODO: implement the insert function
 
@@ -30,6 +35,8 @@ private:
     int* table; //array containing the"list" of elements
     int size; //the size of the array
     int last; //the position of the last element
+
+    int n_resize_called; //you can ignore this value. It is used for debug purposes
 
 };
 
