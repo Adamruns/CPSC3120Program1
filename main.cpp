@@ -10,7 +10,7 @@ using namespace std;
 
 int main() {
     //STEP 2
-    int n_insertions = 10;
+    int n_insertions = 3000;
     DynamicTable table1 = DynamicTable();
     for(int i=0; i<n_insertions; i++){
         table1.insert(i, true);
