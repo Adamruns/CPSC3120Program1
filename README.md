@@ -35,7 +35,7 @@ g++ main.cpp DynamicTable.cpp Timer.cpp -o dynamicTable
 
 As we have seen in class, a dynamic table is an array that automatically resize itself when it gets full. This can be implemented by combining two simple functions, `insert` and `resize`.
 
-* Header file - Start from `DynamicTable.h`, and implement the constructor and destructor of the table. This are the functions called when you create a new Dynamic Table or when you don't need it anymore.
+* Header file - Start from `DynamicTable.h`, and implement the constructor and destructor of the table. These are the functions called when you create a new Dynamic Table or when you don't need it anymore.
 
 * Implementation - Now implement the two functions insert and resize in `DynamicTable.cpp`. You have two methods for resizing the array. The objective of this assignment is to compare these two methods:
 
@@ -45,7 +45,7 @@ As we have seen in class, a dynamic table is an array that automatically resize 
 
 ### Step 3 - Testing and Evaluation
 
-According to `main.cpp` we are inserting an integer (just the value `i`, we don't really care about semantic now) into our array `n_insertions` times. Run the program with increasing values of `op` to check that everything is correct and no segmentation faults are happening. 
+According to `main.cpp` we are inserting an integer (just the value `i`, we don't really care about semantic now) into our array `n_insertions` times. Run the program with increasing values of `op` to check that everything is correct and no segmentation faults are happening.
 
 Once you are confident your implementation is working, uncomment the lines corresponding to STEP 3 in `main.cpp`
 
@@ -54,6 +54,8 @@ Now we are going to use `Timer` to start tracking the time needed to perform the
 What results are you obtaining in terms fo time? How can you justify such a behavior and increase in time performance?
 
 [ OPEN THIS README FILE AND WRITE HERE YOUR ANSWER ]
+
+From what I can see the resize_dummy strategy has a lower initial cost per resizing operation but the higher you go the more it needs to resize which increases the overall time it takes. On the other hand resize has a higher initial cost since it doubles the array but it has fewer resizes as you add more elements which ends up resulting in better performance.
 
 
 ### Step 4 - Visualize results [OPTIONAL]
@@ -69,7 +71,8 @@ python plot_results_dummy.py
 ```
 
 [ ADD THE FIGURES YOU HAVE OBTAINED TO THIS README FILE. NOTICE THAT GITHUB HAS PROBLEMS HANDLING PNG FILES. USE JPG EXTENSION INSTEAD FOR YOUR FIGURES ]
-
+![SS1](<Screenshot 2023-09-26 at 11.38.12 AM.jpg>)
+![SS2](<Screenshot 2023-09-26 at 11.37.43 AM.jpg>)
 [ WHAT CAN WE COMMENT/OBSERVE ABOUT THESE RESULTS?]
 
 ### Step 5 - Wrap up and submitting on Gradescope
@@ -77,7 +80,6 @@ python plot_results_dummy.py
 When you are ready to submit perform the following actions
 - comment all the code marked as Step 3 or Step 4. Your submitted code should print in output only the result of the following line `cout << table1.get_n_resize() << " " << table2.get_n_resize() << endl;`.
 - set `n_insertions=3000`
-- push all your code on Github.
 - access Gradescope and upload code and readme files [`CMakeLists.txt`, `main.cpp`, `DynamicTable.cpp`,`DynamicTable.h`,`Timer.cpp`,`Timer.h`].
 
 If everything is uploaded correctly the autograder will run with no issues.

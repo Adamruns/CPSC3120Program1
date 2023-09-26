@@ -14,12 +14,15 @@ public:
         //TODO: implement the constructor
         //when created the table should have space for one element
         //variable `size` and `last` should be set accordingly
-
+        size = 1; // Initialize size with space for one element
+        last = -1; // Initialize last to -1 as there are no elements yet
+        table = new int[size]; // Allocate memory for the array
     }
 
     ~DynamicTable(){
         //TODO: implement the destructor
         //when destroyed you should call explicitly the destructor for the array
+        delete[] table; // Deallocate the memory for the array
     }
 
     inline int get_n_resize(){return n_resize_called;}
